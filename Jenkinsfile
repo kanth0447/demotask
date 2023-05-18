@@ -18,7 +18,7 @@ pipeline {
           def VERSION1 = "${env.dockerimagename1}:${BUILD_NUMBER}"
           dockerImage = docker.build($VERSION)
           dockerImage1 = docker.build($VERSION1)*/
-          cd ${WORKSPACE}/apps
+          sh "cd ${WORKSPACE}/apps"
           dockerImage = docker.build dockerimagename
           dockerImage1 = docker.build dockerimagename1
         }
