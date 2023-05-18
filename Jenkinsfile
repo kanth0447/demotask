@@ -18,8 +18,8 @@ pipeline {
           def VERSION1 = "${env.dockerimagename1}:${BUILD_NUMBER}"
           dockerImage = docker.build($VERSION)
           dockerImage1 = docker.build($VERSION1)*/
-          dockerImage = docker.build dockerimagename
-          dockerImage1 = docker.build dockerimagename1
+          dockerImage = docker.build(dockerimagename, "-f apps/jobs_microservice/Dockerfile .")
+          dockerImage1 = docker.build(dockerimagename1, "-f apps/api_microservice/Dockerfile .")
         }
       }
     }
