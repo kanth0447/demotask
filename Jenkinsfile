@@ -53,11 +53,8 @@ pipeline {
     stage('Deploying given python apps to Kubernetes') {
       steps {
         script {
-          /*kubernetesDeploy(configs: "kubernetes/deployment_jobs.yaml", "kubernetes/service_jobs.yaml")
-          kubernetesDeploy(configs: "kubernetes/deployment_api.yaml", "kubernetes/service_api.yaml")*/
-          sh '''
-              kubectl apply -f kubernetes/
-             ''' 
+          kubernetesDeploy(configs: "kubernetes/deployment_jobs.yaml", "kubernetes/service_jobs.yaml")
+          kubernetesDeploy(configs: "kubernetes/deployment_api.yaml", "kubernetes/service_api.yaml") 
         }
       }
     }

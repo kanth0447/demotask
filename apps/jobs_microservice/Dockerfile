@@ -17,7 +17,6 @@ COPY . /usr/src/app
 RUN python init_db.py
 
 # Application Environment variables
-#ENV APP_ENV development
 ENV PORT 5001
 
 # Exposing Ports
