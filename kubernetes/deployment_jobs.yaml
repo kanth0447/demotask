@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metromaxjobs-deployment
+  labels:
+    app: metromaxjobs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metromaxjobs
+  template:
+    metadata:
+      labels:
+        app: metromaxjobs
+    spec:
+      containers:
+      - name: metromaxjobs
+        image: kanth0447/metromaxjobs:latest
+        ports:
+        - containerPort: 5001

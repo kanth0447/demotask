@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metromaxapi-deployment
+  labels:
+    app: metromaxapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metromaxapi
+  template:
+    metadata:
+      labels:
+        app: metromaxapi
+    spec:
+      containers:
+      - name: metromaxapi
+        image: kanth0447/metromaxapi:latest
+        env:
+        - name: JOBS_SERVICE
+          value: "metromaxjobs-service.default.svc.cluster.local"
+        ports:
+        - containerPort: 5000
