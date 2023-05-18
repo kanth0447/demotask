@@ -19,15 +19,6 @@ pipeline {
             //dockerImage1 = docker.build dockerimagename1
           }
         }
-        script {
-          /*def VERSION = "${env.dockerimagename}:${BUILD_NUMBER}"
-          def VERSION1 = "${env.dockerimagename1}:${BUILD_NUMBER}"
-          dockerImage = docker.build($VERSION)
-          dockerImage1 = docker.build($VERSION1)
-          sh "cd ${WORKSPACE}/apps"
-          dockerImage = docker.build dockerimagename
-          dockerImage1 = docker.build dockerimagename1*/
-        }
       }
     }
 
